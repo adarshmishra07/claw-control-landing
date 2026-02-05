@@ -144,26 +144,23 @@ function CodeBlock({ code, language = "bash" }: { code: string; language?: strin
   );
 }
 
-const SETUP_PROMPT = `I want to set up Claw Control - the open-source Kanban dashboard for AI agent coordination.
+const SETUP_PROMPT = `Help me set up Claw Control - the open-source Kanban dashboard for AI agents.
 
-**What it does:**
-- Real-time task board (Backlog → Todo → In Progress → Review → Done)
-- Agent status tracking (working/idle/offline)
-- Live activity feed for team communication
-- Multi-agent workflow enforcement
+**What it is:**
+- Real-time task board with drag-and-drop
+- Agent status tracking (working/idle)
+- Live activity feed
+- Multi-agent workflow coordination
 
-**Install the skill:**
-\`\`\`
+**To get started, install the skill:**
 npx skills add adarshmishra07/claw-control
-\`\`\`
 
-**Then help me:**
-1. Deploy (Railway one-click recommended)
-2. Pick a theme (DBZ, One Piece, Marvel, etc.)
-3. Configure AGENTS.md for proper workflow
-4. Optionally set up Supermemory/QMD for enhanced memory
+Walk me through the setup step by step. Ask me questions about:
+- How I want to deploy (options available)
+- What theme I'd like for my agent team
+- My workflow preferences
 
-GitHub: github.com/adarshmishra07/claw-control`;
+Let's do this conversationally - one step at a time! 🦞`;
 
 function InstallTabs() {
   const [activeTab, setActiveTab] = useState<'command' | 'prompt'>('command');
@@ -362,7 +359,7 @@ export function LandingPage({ onEnterDashboard }: LandingPageProps) {
                   </button>
                 ) : (
                   <a
-                    href="https://railway.com/deploy/_odwJ4?referralCode=VsZvQs"
+                    href="https://railway.com/deploy/claw-control?referralCode=VsZvQs&utm_medium=integration&utm_source=template&utm_campaign=generic"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-secondary px-6 py-3 rounded-xl font-semibold flex items-center gap-2"
@@ -575,7 +572,7 @@ export function LandingPage({ onEnterDashboard }: LandingPageProps) {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {/* Railway */}
               <a
-                href="https://railway.com/deploy/_odwJ4?referralCode=VsZvQs"
+                href="https://railway.com/deploy/claw-control?referralCode=VsZvQs&utm_medium=integration&utm_source=template&utm_campaign=generic"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="feature-card p-4 rounded-xl text-center hover:border-[#FF6B6B]/30 transition-colors"
