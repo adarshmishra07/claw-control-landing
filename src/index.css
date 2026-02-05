@@ -319,47 +319,86 @@ html {
 
 /* ============ MOBILE OPTIMIZATIONS ============ */
 @media (max-width: 640px) {
+  /* ===== TYPOGRAPHY - Priority ===== */
+  
+  /* Hero title */
+  h1 {
+    font-size: 2.25rem !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.02em !important;
+  }
+
+  /* Section headings */
+  h2 {
+    font-size: 1.5rem !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.01em !important;
+  }
+
+  /* Card titles */
+  h3 {
+    font-size: 1rem !important;
+    line-height: 1.3 !important;
+  }
+
+  /* Body text - readable on mobile */
+  p {
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Smaller helper text */
+  .text-sm {
+    font-size: 0.8rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .text-xs {
+    font-size: 0.7rem !important;
+  }
+
+  /* Gradient text still readable */
+  .gradient-text {
+    font-size: inherit !important;
+  }
+
+  /* Tagline/pills */
+  .pill-button span,
+  .font-mono {
+    font-size: 0.75rem !important;
+  }
+
+  /* ===== SPACING ===== */
+  
   /* Tighter sections */
   section {
     padding-top: 3rem !important;
     padding-bottom: 3rem !important;
   }
 
-  /* Smaller hero */
+  /* Hero area */
   .min-h-screen {
     min-height: auto;
     padding-top: 5rem;
-    padding-bottom: 3rem;
+    padding-bottom: 2rem;
   }
 
-  /* Reduce orb sizes on mobile */
-  .space-bg::before {
-    width: 300px;
-    height: 300px;
-    top: -100px;
-    right: -100px;
-    filter: blur(60px);
-  }
-
-  .space-bg::after {
-    width: 250px;
-    height: 250px;
-    bottom: -80px;
-    left: -80px;
-    filter: blur(60px);
-  }
-
-  /* Tighter card padding */
+  /* Card padding */
   .feature-card {
-    padding: 1rem !important;
+    padding: 1.25rem !important;
   }
 
-  /* Smaller terminal */
+  /* Terminal */
   .terminal pre {
     padding: 0.75rem !important;
+    font-size: 0.7rem !important;
   }
 
-  /* Tighter gaps */
+  .terminal code {
+    font-size: 0.7rem !important;
+  }
+
+  /* Gaps */
   .gap-6 {
     gap: 1rem !important;
   }
@@ -368,41 +407,20 @@ html {
     gap: 1.25rem !important;
   }
 
-  /* Compact text */
-  h1 {
-    font-size: 2rem !important;
-    line-height: 1.2 !important;
-  }
-
-  h2 {
-    font-size: 1.5rem !important;
-  }
-
-  p {
-    font-size: 0.875rem !important;
-  }
-
-  /* Smaller buttons */
-  .btn-primary, .btn-secondary {
-    padding: 0.75rem 1.25rem !important;
-    font-size: 0.875rem !important;
-  }
-
-  /* Compact nav */
-  nav .h-16 {
-    height: 3.5rem !important;
-  }
-
-  /* Reduce bottom margins */
-  .mb-6, .mb-8, .mb-10 {
+  /* Margins */
+  .mb-6 {
     margin-bottom: 1rem !important;
+  }
+  
+  .mb-8, .mb-10 {
+    margin-bottom: 1.25rem !important;
   }
 
   .mb-16 {
     margin-bottom: 2rem !important;
   }
 
-  /* Tighter padding on containers */
+  /* Padding */
   .px-4 {
     padding-left: 1rem !important;
     padding-right: 1rem !important;
@@ -413,8 +431,42 @@ html {
     padding-bottom: 2rem !important;
   }
 
+  /* ===== BUTTONS ===== */
+  .btn-primary, .btn-secondary {
+    padding: 0.875rem 1.5rem !important;
+    font-size: 0.875rem !important;
+    font-weight: 600 !important;
+  }
+
+  /* ===== NAV ===== */
+  nav .h-16 {
+    height: 3.5rem !important;
+  }
+
+  /* ===== BACKGROUND - reduce orbs on mobile ===== */
+  .space-bg::before {
+    width: 400px;
+    height: 400px;
+    top: -150px;
+    right: -150px;
+    filter: blur(80px);
+  }
+
+  .space-bg::after {
+    width: 350px;
+    height: 350px;
+    bottom: -100px;
+    left: -100px;
+    filter: blur(80px);
+  }
+
   /* Hide scroll indicator on mobile */
   .absolute.bottom-8 {
     display: none;
+  }
+
+  /* Lobster emoji smaller */
+  .text-7xl {
+    font-size: 3.5rem !important;
   }
 }
