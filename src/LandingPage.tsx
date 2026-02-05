@@ -174,7 +174,7 @@ function InstallTabs() {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full max-w-lg mx-auto">
       {/* Tabs */}
       <div className="flex justify-center gap-2 mb-4">
         <button
