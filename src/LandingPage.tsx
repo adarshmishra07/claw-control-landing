@@ -152,8 +152,14 @@ const SETUP_PROMPT = `Help me set up Claw Control - the open-source Kanban dashb
 - Live activity feed
 - Multi-agent workflow coordination
 
-**Get started:**
+**Install the skill:**
 npx skills add adarshmishra07/claw-control
+
+**If already installed, update first:**
+npx skills update
+
+**Railway Deploy URL (use this exact link):**
+https://railway.com/deploy/claw-control?referralCode=VsZvQs
 
 Learn more: clawcontrol.xyz`;
 
