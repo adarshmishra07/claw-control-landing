@@ -152,10 +152,10 @@ const SETUP_PROMPT = `Help me set up Claw Control - the open-source Kanban dashb
 - Live activity feed
 - Multi-agent workflow coordination
 
-**To get started, install the skill:**
+**Get started:**
 npx skills add adarshmishra07/claw-control
 
-Then walk me through setup conversationally - one step at a time! 🦞`;
+Learn more: clawcontrol.xyz`;
 
 function InstallTabs() {
   const [activeTab, setActiveTab] = useState<'command' | 'prompt'>('command');
