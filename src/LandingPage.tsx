@@ -155,12 +155,7 @@ const SETUP_PROMPT = `Help me set up Claw Control - the open-source Kanban dashb
 **To get started, install the skill:**
 npx skills add adarshmishra07/claw-control
 
-**Deployment options to ask me about:**
-- A) One-click deploy (I click a button)
-- B) You deploy for me (I give you Railway token)
-- C) Full automation (I give you GitHub + Railway tokens, you fork & deploy)
-
-Walk me through setup conversationally. Ask me which deployment option I prefer, then guide me step by step through theme selection and configuration. 🦞`;
+Then walk me through setup conversationally - one step at a time! 🦞`;
 
 function InstallTabs() {
   const [activeTab, setActiveTab] = useState<'command' | 'prompt'>('command');
