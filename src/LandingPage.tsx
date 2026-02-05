@@ -246,36 +246,45 @@ export function LandingPage({ onEnterDashboard }: LandingPageProps) {
             {/* CTA Buttons */}
             <motion.div
               variants={fadeInUp}
-              className="flex flex-col sm:flex-row items-center justify-center gap-4"
+              className="flex flex-col items-center gap-4"
             >
-              {onEnterDashboard ? (
-                <button
-                  onClick={onEnterDashboard}
-                  className="btn-primary group px-8 py-4 rounded-xl font-semibold flex items-center gap-2"
-                >
-                  Launch Dashboard
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
-              ) : (
+              {/* Primary: Install command */}
+              <div className="w-full max-w-md">
+                <CodeBlock code="npx skills add adarshmishra07/claw-control" language="bash" />
+              </div>
+              <p className="text-sm text-gray-500">Install the skill → Your AI agent handles the rest</p>
+              
+              {/* Secondary buttons */}
+              <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
+                {onEnterDashboard ? (
+                  <button
+                    onClick={onEnterDashboard}
+                    className="btn-primary group px-8 py-4 rounded-xl font-semibold flex items-center gap-2"
+                  >
+                    Launch Dashboard
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                ) : (
+                  <a
+                    href="https://railway.com/deploy/_odwJ4?referralCode=VsZvQs"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-secondary px-6 py-3 rounded-xl font-semibold flex items-center gap-2"
+                  >
+                    <Rocket className="w-5 h-5" />
+                    Deploy on Railway
+                  </a>
+                )}
                 <a
-                  href="https://railway.com/deploy/_odwJ4?referralCode=VsZvQs"
+                  href="https://github.com/adarshmishra07/claw-control"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-primary group px-8 py-4 rounded-xl font-semibold flex items-center gap-2"
+                  className="btn-secondary px-6 py-3 rounded-xl font-semibold flex items-center gap-2"
                 >
-                  <Rocket className="w-5 h-5" />
-                  Deploy on Railway
+                  <Github className="w-5 h-5" />
+                  View on GitHub
                 </a>
-              )}
-              <a
-                href="https://github.com/adarshmishra07/claw-control"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-secondary px-8 py-4 rounded-xl font-semibold flex items-center gap-2"
-              >
-                <Github className="w-5 h-5" />
-                View on GitHub
-              </a>
+              </div>
             </motion.div>
 
           </motion.div>
@@ -390,20 +399,20 @@ export function LandingPage({ onEnterDashboard }: LandingPageProps) {
           >
             <StepCard
               number="1"
-              title="Clone the Repository"
-              description="Fork and clone Claw Control from GitHub. It's open source and ready to customize."
-              icon={<Github className="w-5 h-5" />}
-            />
-            <StepCard
-              number="2"
-              title="Configure & Deploy"
-              description="Set up your environment variables and deploy with Docker. Works locally or in the cloud."
+              title="Install the Skill"
+              description="Run npx skills add adarshmishra07/claw-control to teach your AI agent how to use Claw Control."
               icon={<Terminal className="w-5 h-5" />}
             />
             <StepCard
+              number="2"
+              title="Your Agent Guides You"
+              description="The skill walks you through deployment (Railway, Docker, or manual), theme selection, and configuration."
+              icon={<Bot className="w-5 h-5" />}
+            />
+            <StepCard
               number="3"
-              title="Connect Your Agents"
-              description="Point your AI agents to the Mission Control API. They'll start reporting in automatically."
+              title="Start Coordinating"
+              description="Your agents report to Mission Control automatically. Track tasks, monitor status, and stay in sync."
               icon={<Users className="w-5 h-5" />}
             />
           </motion.div>
@@ -530,37 +539,32 @@ npm install && npm run dev`}
               />
             </motion.div>
 
-            {/* Option 4: AI Automation */}
+            {/* Option 4: AI Automation (Recommended) */}
             <motion.div
               variants={fadeInUp}
-              className="feature-card group relative p-4 sm:p-6 rounded-2xl overflow-hidden"
+              className="feature-card group relative p-4 sm:p-6 rounded-2xl overflow-hidden border-2 border-[#FF6B6B]/30"
             >
               <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
-                <span className="px-2 py-1 text-xs font-mono bg-purple-500/20 text-purple-400 rounded-full">
-                  AI-Powered
+                <span className="px-2 py-1 text-xs font-mono bg-[#FF6B6B]/20 text-[#FF6B6B] rounded-full">
+                  Recommended
                 </span>
               </div>
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 rounded-xl bg-gradient-to-br from-purple-500/20 to-purple-600/10 flex items-center justify-center">
-                  <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-purple-400" />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 rounded-xl bg-gradient-to-br from-[#FF6B6B]/20 to-[#EF4444]/10 flex items-center justify-center">
+                  <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-[#FF6B6B]" />
                 </div>
                 <div className="min-w-0">
-                  <h3 className="text-base sm:text-lg font-semibold text-white">Full Automation with AI</h3>
-                  <p className="text-xs sm:text-sm text-gray-500 break-words">Let your AI agent deploy it for you</p>
+                  <h3 className="text-base sm:text-lg font-semibold text-white">Install the Skill</h3>
+                  <p className="text-xs sm:text-sm text-gray-500 break-words">Your AI agent handles everything</p>
                 </div>
               </div>
-              <p className="text-gray-400 text-sm mb-6 break-words">
-                Use the Claw Control skill on ClawHub to have your AI agent handle the entire deployment automatically.
+              <p className="text-gray-400 text-sm mb-4 break-words">
+                The skill teaches your agent how to deploy, configure themes, set up AGENTS.md, and integrate memory.
               </p>
-              <a
-                href="https://clawhub.openclaw.ai/skills/claw-control"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-secondary w-full py-3 rounded-xl text-sm sm:text-base font-semibold flex items-center justify-center gap-2 whitespace-nowrap"
-              >
-                <Bot className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
-                View on ClawHub
-              </a>
+              <CodeBlock
+                code="npx skills add adarshmishra07/claw-control"
+                language="bash"
+              />
             </motion.div>
           </motion.div>
         </div>
@@ -600,35 +604,31 @@ npm install && npm run dev`}
                 and built for teams who demand the best.
               </p>
 
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                {onEnterDashboard ? (
-                  <button
-                    onClick={onEnterDashboard}
-                    className="btn-primary group px-8 py-4 rounded-xl font-semibold flex items-center gap-2"
-                  >
-                    Enter Dashboard
-                    <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </button>
-                ) : (
-                  <a
-                    href="https://railway.com/deploy/_odwJ4?referralCode=VsZvQs"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-primary group px-8 py-4 rounded-xl font-semibold flex items-center gap-2"
-                  >
-                    <Rocket className="w-5 h-5" />
-                    Deploy Now
-                  </a>
-                )}
-                <a
-                  href="https://github.com/adarshmishra07/claw-control"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-secondary px-8 py-4 rounded-xl font-semibold flex items-center gap-2"
-                >
-                  <Github className="w-5 h-5" />
-                  Star on GitHub
-                </a>
+              <div className="flex flex-col items-center gap-4">
+                <div className="w-full max-w-md">
+                  <CodeBlock code="npx skills add adarshmishra07/claw-control" language="bash" />
+                </div>
+                <div className="flex flex-col sm:flex-row items-center gap-4 mt-2">
+                  {onEnterDashboard ? (
+                    <button
+                      onClick={onEnterDashboard}
+                      className="btn-primary group px-8 py-4 rounded-xl font-semibold flex items-center gap-2"
+                    >
+                      Enter Dashboard
+                      <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </button>
+                  ) : (
+                    <a
+                      href="https://github.com/adarshmishra07/claw-control"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary px-8 py-4 rounded-xl font-semibold flex items-center gap-2"
+                    >
+                      <Github className="w-5 h-5" />
+                      Star on GitHub
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           </motion.div>
