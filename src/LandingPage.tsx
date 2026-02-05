@@ -144,14 +144,26 @@ function CodeBlock({ code, language = "bash" }: { code: string; language?: strin
   );
 }
 
-const SETUP_PROMPT = `Set up Claw Control for me - the Kanban dashboard for AI agents.
+const SETUP_PROMPT = `I want to set up Claw Control - the open-source Kanban dashboard for AI agent coordination.
 
-1. Install the skill: npx skills add adarshmishra07/claw-control
-2. Deploy the dashboard (Railway one-click is easiest)
-3. Help me pick a theme for my agent team
-4. Configure my AGENTS.md for the workflow
+**What it does:**
+- Real-time task board (Backlog → Todo → In Progress → Review → Done)
+- Agent status tracking (working/idle/offline)
+- Live activity feed for team communication
+- Multi-agent workflow enforcement
 
-Let's go! 🦞`;
+**Install the skill:**
+\`\`\`
+npx skills add adarshmishra07/claw-control
+\`\`\`
+
+**Then help me:**
+1. Deploy (Railway one-click recommended)
+2. Pick a theme (DBZ, One Piece, Marvel, etc.)
+3. Configure AGENTS.md for proper workflow
+4. Optionally set up Supermemory/QMD for enhanced memory
+
+GitHub: github.com/adarshmishra07/claw-control`;
 
 function InstallTabs() {
   const [activeTab, setActiveTab] = useState<'command' | 'prompt'>('command');
