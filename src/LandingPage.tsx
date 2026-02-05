@@ -278,22 +278,6 @@ export function LandingPage({ onEnterDashboard }: LandingPageProps) {
               </a>
             </motion.div>
 
-            {/* Stats */}
-            <motion.div
-              variants={fadeInUp}
-              className="mt-16 grid grid-cols-3 gap-8 max-w-2xl mx-auto"
-            >
-              {[
-                { value: '100%', label: 'Open Source' },
-                { value: 'Real-time', label: 'Updates' },
-                { value: 'Mobile', label: 'Responsive' },
-              ].map((stat, i) => (
-                <div key={i} className="text-center">
-                  <div className="text-2xl sm:text-3xl font-display font-bold text-[#FF6B6B]">{stat.value}</div>
-                  <div className="text-sm text-gray-500 font-mono">{stat.label}</div>
-                </div>
-              ))}
-            </motion.div>
           </motion.div>
         </div>
 
