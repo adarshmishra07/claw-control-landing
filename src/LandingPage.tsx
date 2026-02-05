@@ -644,7 +644,7 @@ npm install && npm run dev`}
               <span className="font-semibold gradient-text">Claw Control</span>
             </div>
             <div className="text-sm text-gray-500 font-mono">
-              Built with love by the OpenClaw community
+              Made with 🦞 by the OpenClaw community
             </div>
             <div className="flex items-center gap-4">
               <a
