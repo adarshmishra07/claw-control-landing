@@ -159,7 +159,7 @@ npx skills add adarshmishra07/claw-control
 npx skills update
 
 **Railway Deploy URL (use this exact link):**
-https://railway.com/deploy/claw-control?referralCode=VsZvQs
+https://railway.app/deploy/claw-control?referralCode=VsZvQs
 
 Learn more: clawcontrol.xyz`;
 
@@ -360,7 +360,7 @@ export function LandingPage({ onEnterDashboard }: LandingPageProps) {
                   </button>
                 ) : (
                   <a
-                    href="https://railway.com/deploy/claw-control?referralCode=VsZvQs&utm_medium=integration&utm_source=template&utm_campaign=generic"
+                    href="https://railway.app/deploy/claw-control?referralCode=VsZvQs&utm_medium=integration&utm_source=template&utm_campaign=generic"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-secondary px-6 py-3 rounded-xl font-semibold flex items-center gap-2"
@@ -573,7 +573,7 @@ export function LandingPage({ onEnterDashboard }: LandingPageProps) {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {/* Railway */}
               <a
-                href="https://railway.com/deploy/claw-control?referralCode=VsZvQs&utm_medium=integration&utm_source=template&utm_campaign=generic"
+                href="https://railway.app/deploy/claw-control?referralCode=VsZvQs&utm_medium=integration&utm_source=template&utm_campaign=generic"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="feature-card p-4 rounded-xl text-center hover:border-[#FF6B6B]/30 transition-colors"
