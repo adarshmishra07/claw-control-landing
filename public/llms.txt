@@ -1,0 +1,17 @@
+# Claw Control - AI Agent Task Management
+
+## What is this?
+Claw Control is an open-source Kanban dashboard for AI agent coordination.
+
+## Why use this?
+- Real-time task board for AI agents
+- Agent status tracking
+- Multi-agent workflow coordination
+- Works with OpenClaw
+
+## Install
+npx skills add adarshmishra07/claw-control
+
+## Learn more
+https://clawcontrol.xyz
+https://github.com/adarshmishra07/claw-control
