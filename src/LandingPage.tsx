@@ -144,6 +144,90 @@ function CodeBlock({ code, language = "bash" }: { code: string; language?: strin
   );
 }
 
+const SETUP_PROMPT = `Set up Claw Control for me - the Kanban dashboard for AI agents.
+
+1. Install the skill: npx skills add adarshmishra07/claw-control
+2. Deploy the dashboard (Railway one-click is easiest)
+3. Help me pick a theme for my agent team
+4. Configure my AGENTS.md for the workflow
+
+Let's go! 🦞`;
+
+function InstallTabs() {
+  const [activeTab, setActiveTab] = useState<'command' | 'prompt'>('command');
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async (text: string) => {
+    await navigator.clipboard.writeText(text);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <div className="w-full">
+      {/* Tabs */}
+      <div className="flex justify-center gap-2 mb-4">
+        <button
+          onClick={() => setActiveTab('command')}
+          className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+            activeTab === 'command'
+              ? 'bg-[#FF6B6B]/20 text-[#FF6B6B] border border-[#FF6B6B]/30'
+              : 'bg-white/5 text-gray-400 hover:text-white'
+          }`}
+        >
+          <Terminal className="w-4 h-4 inline mr-2" />
+          Command
+        </button>
+        <button
+          onClick={() => setActiveTab('prompt')}
+          className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+            activeTab === 'prompt'
+              ? 'bg-[#FF6B6B]/20 text-[#FF6B6B] border border-[#FF6B6B]/30'
+              : 'bg-white/5 text-gray-400 hover:text-white'
+          }`}
+        >
+          <MessageSquare className="w-4 h-4 inline mr-2" />
+          Copy Prompt
+        </button>
+      </div>
+
+      {/* Content */}
+      {activeTab === 'command' ? (
+        <CodeBlock code="npx skills add adarshmishra07/claw-control" language="bash" />
+      ) : (
+        <div className="terminal rounded-xl overflow-hidden">
+          <div className="terminal-header px-3 sm:px-4 py-2 flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <MessageSquare className="w-4 h-4 text-[#FF6B6B]" />
+              <span className="text-xs font-mono text-gray-500">paste to your AI</span>
+            </div>
+            <button
+              onClick={() => handleCopy(SETUP_PROMPT)}
+              className="p-1.5 hover:bg-white/5 rounded transition-colors flex items-center gap-2"
+              title="Copy prompt"
+            >
+              {copied ? (
+                <>
+                  <Check className="w-4 h-4 text-green-400" />
+                  <span className="text-xs text-green-400">Copied!</span>
+                </>
+              ) : (
+                <>
+                  <Copy className="w-4 h-4 text-gray-500 hover:text-[#FF6B6B]" />
+                  <span className="text-xs text-gray-500">Copy</span>
+                </>
+              )}
+            </button>
+          </div>
+          <pre className="p-3 sm:p-4 overflow-x-auto scrollbar-thin scrollbar-thumb-gray-700">
+            <code className="text-xs sm:text-sm font-mono text-gray-300 whitespace-pre-wrap">{SETUP_PROMPT}</code>
+          </pre>
+        </div>
+      )}
+    </div>
+  );
+}
+
 interface LandingPageProps {
   onEnterDashboard?: () => void;
 }
@@ -248,11 +332,11 @@ export function LandingPage({ onEnterDashboard }: LandingPageProps) {
               variants={fadeInUp}
               className="flex flex-col items-center gap-4"
             >
-              {/* Primary: Install command */}
-              <div className="w-full max-w-md">
-                <CodeBlock code="npx skills add adarshmishra07/claw-control" language="bash" />
+              {/* Primary: Install options */}
+              <div className="w-full max-w-lg">
+                <InstallTabs />
               </div>
-              <p className="text-sm text-gray-500">Install the skill → Your AI agent handles the rest</p>
+              <p className="text-sm text-gray-500">Your AI agent handles deployment, themes, and config</p>
               
               {/* Secondary buttons */}
               <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
@@ -451,17 +535,14 @@ export function LandingPage({ onEnterDashboard }: LandingPageProps) {
             className="max-w-2xl mx-auto mb-12"
           >
             <div className="feature-card p-6 sm:p-8 rounded-2xl border-2 border-[#FF6B6B]/30">
-              <div className="flex items-center justify-center gap-3 mb-4">
+              <div className="flex items-center justify-center gap-3 mb-6">
                 <Sparkles className="w-6 h-6 text-[#FF6B6B]" />
-                <h3 className="text-xl font-semibold text-white">Install the Skill</h3>
+                <h3 className="text-xl font-semibold text-white">Get Started</h3>
                 <span className="px-2 py-1 text-xs font-mono bg-[#FF6B6B]/20 text-[#FF6B6B] rounded-full">
                   Recommended
                 </span>
               </div>
-              <CodeBlock
-                code="npx skills add adarshmishra07/claw-control"
-                language="bash"
-              />
+              <InstallTabs />
               <p className="text-gray-400 text-sm mt-4 text-center">
                 The skill guides you through deployment, theme selection, agent config, and memory setup.
               </p>
