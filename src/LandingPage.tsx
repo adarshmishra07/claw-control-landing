@@ -438,134 +438,81 @@ export function LandingPage({ onEnterDashboard }: LandingPageProps) {
               <span className="gradient-text"> Launch?</span>
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-gray-400 max-w-2xl mx-auto">
-              Choose your preferred deployment method
+              One command. Your AI agent handles the rest.
             </motion.p>
           </motion.div>
 
-          {/* Deployment Options Grid */}
+          {/* Primary: Install Skill */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            variants={stagger}
-            className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 max-w-5xl mx-auto"
+            variants={fadeInUp}
+            className="max-w-2xl mx-auto mb-12"
           >
-            {/* Option 1: One-Click Deploy */}
-            <motion.div
-              variants={fadeInUp}
-              className="feature-card group relative p-4 sm:p-6 rounded-2xl overflow-hidden"
-            >
-              <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
-                <span className="px-2 py-1 text-xs font-mono bg-[#FF6B6B]/20 text-[#FF6B6B] rounded-full">
-                  Fastest
-                </span>
-              </div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 rounded-xl bg-gradient-to-br from-[#FF6B6B]/20 to-[#EF4444]/10 flex items-center justify-center">
-                  <Rocket className="w-5 h-5 sm:w-6 sm:h-6 text-[#FF6B6B]" />
-                </div>
-                <div className="min-w-0">
-                  <h3 className="text-base sm:text-lg font-semibold text-white">One-Click Deploy</h3>
-                  <p className="text-xs sm:text-sm text-gray-500 break-words">Deploy in 2 minutes, no config needed</p>
-                </div>
-              </div>
-              <p className="text-gray-400 text-sm mb-6 break-words">
-                The easiest way to get started. Click the button below and Railway handles everything for you.
-              </p>
-              <a
-                href="https://railway.com/deploy/_odwJ4?referralCode=VsZvQs"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary w-full py-3 rounded-xl text-sm sm:text-base font-semibold flex items-center justify-center gap-2 whitespace-nowrap"
-              >
-                <Rocket className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0" />
-                Deploy on Railway
-              </a>
-            </motion.div>
-
-            {/* Option 2: Docker Compose */}
-            <motion.div
-              variants={fadeInUp}
-              className="feature-card group relative p-4 sm:p-6 rounded-2xl overflow-hidden"
-            >
-              <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
-                <span className="px-2 py-1 text-xs font-mono bg-blue-500/20 text-blue-400 rounded-full">
-                  Recommended
-                </span>
-              </div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 rounded-xl bg-gradient-to-br from-blue-500/20 to-blue-600/10 flex items-center justify-center">
-                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-blue-400" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.186m0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.185.185.186m-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.185.185.186m-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.185.186.186m5.893 2.715h2.118a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.185-.186h-2.12a.186.186 0 00-.185.186v1.887c0 .102.084.185.186.185m-2.92 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.082.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51-.338 0-.676.03-1.01.087-.248-1.7-1.653-2.53-1.716-2.566l-.344-.199-.226.327c-.284.438-.49.922-.612 1.43-.23.97-.09 1.882.403 2.661-.595.332-1.55.413-1.744.42H.751a.751.751 0 00-.75.748 11.376 11.376 0 00.692 4.062c.545 1.428 1.355 2.48 2.41 3.124 1.18.723 3.1 1.137 5.275 1.137.983 0 1.978-.085 2.955-.253a12.3 12.3 0 003.18-1.028 9.922 9.922 0 002.188-1.518c1.33-1.282 2.122-2.799 2.725-4.087.083 0 .167.003.251.003 1.552 0 2.51-.625 3.04-1.15a3.166 3.166 0 00.768-1.086l.1-.26z"/>
-                  </svg>
-                </div>
-                <div className="min-w-0">
-                  <h3 className="text-base sm:text-lg font-semibold text-white">Docker Compose</h3>
-                  <p className="text-xs sm:text-sm text-gray-500 break-words">Self-hosted with full control</p>
-                </div>
-              </div>
-              <CodeBlock
-                code={`git clone https://github.com/adarshmishra07/claw-control
-cd claw-control
-docker compose up`}
-                language="bash"
-              />
-            </motion.div>
-
-            {/* Option 3: npm/Manual */}
-            <motion.div
-              variants={fadeInUp}
-              className="feature-card group relative p-4 sm:p-6 rounded-2xl overflow-hidden"
-            >
-              <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
-                <span className="px-2 py-1 text-xs font-mono bg-green-500/20 text-green-400 rounded-full">
-                  Development
-                </span>
-              </div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 rounded-xl bg-gradient-to-br from-green-500/20 to-green-600/10 flex items-center justify-center">
-                  <Terminal className="w-5 h-5 sm:w-6 sm:h-6 text-green-400" />
-                </div>
-                <div className="min-w-0">
-                  <h3 className="text-base sm:text-lg font-semibold text-white">npm / Manual</h3>
-                  <p className="text-xs sm:text-sm text-gray-500 break-words">For local development</p>
-                </div>
-              </div>
-              <CodeBlock
-                code={`git clone https://github.com/adarshmishra07/claw-control
-cd claw-control
-npm install && npm run dev`}
-                language="bash"
-              />
-            </motion.div>
-
-            {/* Option 4: AI Automation (Recommended) */}
-            <motion.div
-              variants={fadeInUp}
-              className="feature-card group relative p-4 sm:p-6 rounded-2xl overflow-hidden border-2 border-[#FF6B6B]/30"
-            >
-              <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
+            <div className="feature-card p-6 sm:p-8 rounded-2xl border-2 border-[#FF6B6B]/30">
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <Sparkles className="w-6 h-6 text-[#FF6B6B]" />
+                <h3 className="text-xl font-semibold text-white">Install the Skill</h3>
                 <span className="px-2 py-1 text-xs font-mono bg-[#FF6B6B]/20 text-[#FF6B6B] rounded-full">
                   Recommended
                 </span>
               </div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 rounded-xl bg-gradient-to-br from-[#FF6B6B]/20 to-[#EF4444]/10 flex items-center justify-center">
-                  <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-[#FF6B6B]" />
-                </div>
-                <div className="min-w-0">
-                  <h3 className="text-base sm:text-lg font-semibold text-white">Install the Skill</h3>
-                  <p className="text-xs sm:text-sm text-gray-500 break-words">Your AI agent handles everything</p>
-                </div>
-              </div>
-              <p className="text-gray-400 text-sm mb-4 break-words">
-                The skill teaches your agent how to deploy, configure themes, set up AGENTS.md, and integrate memory.
-              </p>
               <CodeBlock
                 code="npx skills add adarshmishra07/claw-control"
                 language="bash"
               />
-            </motion.div>
+              <p className="text-gray-400 text-sm mt-4 text-center">
+                The skill guides you through deployment, theme selection, agent config, and memory setup.
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Secondary: Manual Options */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="max-w-4xl mx-auto"
+          >
+            <p className="text-center text-gray-500 text-sm mb-6">
+              Or deploy manually (the skill can still help after):
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {/* Railway */}
+              <a
+                href="https://railway.com/deploy/_odwJ4?referralCode=VsZvQs"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="feature-card p-4 rounded-xl text-center hover:border-[#FF6B6B]/30 transition-colors"
+              >
+                <Rocket className="w-6 h-6 text-[#FF6B6B] mx-auto mb-2" />
+                <h4 className="text-sm font-semibold text-white">Railway</h4>
+                <p className="text-xs text-gray-500">One-click deploy</p>
+              </a>
+              
+              {/* Docker */}
+              <div className="feature-card p-4 rounded-xl text-center">
+                <svg className="w-6 h-6 text-blue-400 mx-auto mb-2" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.186m0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.185.185.186m-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.185.185.186m-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.185.186.186m5.893 2.715h2.118a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.185-.186h-2.12a.186.186 0 00-.185.186v1.887c0 .102.084.185.186.185m-2.92 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.082.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51-.338 0-.676.03-1.01.087-.248-1.7-1.653-2.53-1.716-2.566l-.344-.199-.226.327c-.284.438-.49.922-.612 1.43-.23.97-.09 1.882.403 2.661-.595.332-1.55.413-1.744.42H.751a.751.751 0 00-.75.748 11.376 11.376 0 00.692 4.062c.545 1.428 1.355 2.48 2.41 3.124 1.18.723 3.1 1.137 5.275 1.137.983 0 1.978-.085 2.955-.253a12.3 12.3 0 003.18-1.028 9.922 9.922 0 002.188-1.518c1.33-1.282 2.122-2.799 2.725-4.087.083 0 .167.003.251.003 1.552 0 2.51-.625 3.04-1.15a3.166 3.166 0 00.768-1.086l.1-.26z"/>
+                </svg>
+                <h4 className="text-sm font-semibold text-white">Docker</h4>
+                <p className="text-xs text-gray-500">Self-hosted</p>
+              </div>
+              
+              {/* GitHub */}
+              <a
+                href="https://github.com/adarshmishra07/claw-control"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="feature-card p-4 rounded-xl text-center hover:border-[#FF6B6B]/30 transition-colors"
+              >
+                <Github className="w-6 h-6 text-gray-400 mx-auto mb-2" />
+                <h4 className="text-sm font-semibold text-white">GitHub</h4>
+                <p className="text-xs text-gray-500">Clone & run</p>
+              </a>
+            </div>
           </motion.div>
         </div>
       </section>
