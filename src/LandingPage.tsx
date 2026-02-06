@@ -66,15 +66,15 @@ function FeatureCard({ icon, title, description, delay = 0 }: FeatureCardProps) 
       whileInView="visible"
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay }}
-      whileHover={{ scale: 1.02, y: -5 }}
-      className="feature-card group relative p-6 rounded-2xl"
+      whileHover={{ y: -2 }}
+      className="feature-card group relative p-6"
     >
       <div className="relative z-10">
-        <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#FF6B6B]/20 to-[#EF4444]/10 flex items-center justify-center mb-4 group-hover:from-[#FF6B6B]/30 group-hover:to-[#EF4444]/20 transition-colors">
+        <div className="w-12 h-12 rounded-xl bg-[#1A1A1A] border border-[#2A2A2A] flex items-center justify-center mb-4 group-hover:border-[#3A3A3A] transition-colors">
           <span className="text-[#FF6B6B]">{icon}</span>
         </div>
-        <h3 className="text-lg font-semibold text-white mb-2">{title}</h3>
-        <p className="text-gray-400 text-sm leading-relaxed">{description}</p>
+        <h3 className="text-lg font-semibold text-[#FAFAFA] mb-2 font-display">{title}</h3>
+        <p className="text-[#9CA3AF] text-sm leading-relaxed font-mono">{description}</p>
       </div>
     </motion.div>
   );
@@ -246,8 +246,8 @@ export function LandingPage({ onEnterDashboard }: LandingPageProps) {
       <div className="space-bg" />
       <div className="stars" />
 
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-black/80 border-b border-white/10">
+      {/* Navigation - OpenClaw Style */}
+      <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-[#0A0A0A]/90 border-b border-[#2A2A2A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <motion.div
@@ -256,7 +256,7 @@ export function LandingPage({ onEnterDashboard }: LandingPageProps) {
               className="flex items-center gap-3"
             >
               <span className="text-2xl">🦞</span>
-              <span className="font-display font-bold gradient-text text-lg">
+              <span className="font-display font-semibold gradient-text text-lg">
                 Claw Control
               </span>
             </motion.div>
@@ -269,14 +269,14 @@ export function LandingPage({ onEnterDashboard }: LandingPageProps) {
                 href="https://github.com/adarshmishra07/claw-control"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 hover:bg-white/5 rounded-lg transition-colors"
+                className="p-2 hover:bg-[#1A1A1A] rounded-lg transition-colors"
               >
-                <Github className="w-5 h-5 text-gray-400 hover:text-[#FF6B6B]" />
+                <Github className="w-5 h-5 text-[#9CA3AF] hover:text-[#FF6B6B]" />
               </a>
               {onEnterDashboard && (
                 <button
                   onClick={onEnterDashboard}
-                  className="px-4 py-2 bg-[#FF6B6B]/10 hover:bg-[#FF6B6B]/20 border border-[#FF6B6B]/30 rounded-lg font-medium text-sm text-[#FF6B6B] transition-all hover:border-[#FF6B6B]/50"
+                  className="px-4 py-2 bg-[#1A1A1A] hover:bg-[#252525] border border-[#2A2A2A] hover:border-[#3A3A3A] rounded-lg font-medium text-sm text-[#FF6B6B] transition-all"
                 >
                   Dashboard
                 </button>
@@ -308,26 +308,34 @@ export function LandingPage({ onEnterDashboard }: LandingPageProps) {
             {/* Badge */}
             <motion.div
               variants={fadeInUp}
-              className="pill-button inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8"
+              className="pill-button inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6"
             >
               <Sparkles className="w-4 h-4 text-[#FF6B6B]" />
               <span className="text-sm font-mono text-[#FF6B6B]">Open Source Mission Control</span>
             </motion.div>
 
-            {/* Main headline */}
+            {/* Main headline - 48px bold */}
             <motion.h1
               variants={fadeInUp}
-              className="font-display text-5xl sm:text-6xl md:text-7xl font-black mb-6 tracking-tight"
+              className="font-display text-5xl sm:text-6xl md:text-[48px] font-bold mb-4 tracking-tight leading-tight"
             >
-              <span className="text-white">Your AI Agents</span>
+              <span className="text-[#FAFAFA]">Your AI Agents</span>
               <br />
               <span className="gradient-text">Under Control</span>
             </motion.h1>
 
-            {/* Subtitle */}
+            {/* Tagline - ALL CAPS with wide letter spacing */}
             <motion.p
               variants={fadeInUp}
-              className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed"
+              className="tagline text-sm tracking-[0.15em] uppercase font-medium text-[#E85555] mb-8"
+            >
+              THE KANBAN BOARD THAT ACTUALLY WORKS.
+            </motion.p>
+
+            {/* Subtitle - Fragment Mono body text */}
+            <motion.p
+              variants={fadeInUp}
+              className="text-base sm:text-lg text-[#9CA3AF] max-w-2xl mx-auto mb-10 leading-relaxed font-mono"
             >
               A beautiful, real-time dashboard to manage your AI agent workforce. 
               Monitor tasks, track progress, and coordinate your autonomous team 
@@ -670,15 +678,15 @@ export function LandingPage({ onEnterDashboard }: LandingPageProps) {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-white/5 py-8">
+      {/* Footer - OpenClaw Style */}
+      <footer className="border-t border-[#2A2A2A] py-8 bg-[#0A0A0A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-2">
               <span className="text-xl">🦞</span>
-              <span className="font-semibold gradient-text">Claw Control</span>
+              <span className="font-semibold gradient-text font-display">Claw Control</span>
             </div>
-            <div className="text-sm text-gray-500 font-mono">
+            <div className="text-sm text-[#9CA3AF] font-mono">
               Made with 🦞 by the OpenClaw community
             </div>
             <div className="flex items-center gap-4">
@@ -686,9 +694,9 @@ export function LandingPage({ onEnterDashboard }: LandingPageProps) {
                 href="https://github.com/adarshmishra07/claw-control"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 hover:bg-white/5 rounded-lg transition-colors"
+                className="p-2 hover:bg-[#1A1A1A] rounded-lg transition-colors"
               >
-                <Github className="w-5 h-5 text-gray-500 hover:text-[#FF6B6B]" />
+                <Github className="w-5 h-5 text-[#9CA3AF] hover:text-[#FF6B6B]" />
               </a>
             </div>
           </div>
